@@ -1,0 +1,5 @@
+signature,file,startline,startcol,endline,endcol,properties
+Lcom/android/server/power/optimization/Flags;->disableSystemServicePowerAttr()Z,out/soong/.intermediates/frameworks/base/services/core/java/com/android/server/power/backstage_power_flags_lib/android_common/javac/srcjars/com/android/server/power/optimization/Flags.java,18,5,18,25,
+Lcom/android/server/power/optimization/Flags;->powerMonitorApi()Z,out/soong/.intermediates/frameworks/base/services/core/java/com/android/server/power/backstage_power_flags_lib/android_common/javac/srcjars/com/android/server/power/optimization/Flags.java,24,5,24,25,
+Lcom/android/server/power/optimization/Flags;->streamlinedBatteryStats()Z,out/soong/.intermediates/frameworks/base/services/core/java/com/android/server/power/backstage_power_flags_lib/android_common/javac/srcjars/com/android/server/power/optimization/Flags.java,30,5,30,25,
+Lcom/android/server/power/optimization/Flags;->streamlinedConnectivityBatteryStats()Z,out/soong/.intermediates/frameworks/base/services/core/java/com/android/server/power/backstage_power_flags_lib/android_common/javac/srcjars/com/android/server/power/optimization/Flags.java,36,5,36,25,

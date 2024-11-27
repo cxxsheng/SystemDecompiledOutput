@@ -1,0 +1,141 @@
+package android.app;
+
+/* loaded from: classes.dex */
+public interface ICallNotificationEventCallback extends android.os.IInterface {
+    public static final java.lang.String DESCRIPTOR = "android.app.ICallNotificationEventCallback";
+
+    void onCallNotificationPosted(java.lang.String str, android.os.UserHandle userHandle) throws android.os.RemoteException;
+
+    void onCallNotificationRemoved(java.lang.String str, android.os.UserHandle userHandle) throws android.os.RemoteException;
+
+    public static class Default implements android.app.ICallNotificationEventCallback {
+        @Override // android.app.ICallNotificationEventCallback
+        public void onCallNotificationPosted(java.lang.String str, android.os.UserHandle userHandle) throws android.os.RemoteException {
+        }
+
+        @Override // android.app.ICallNotificationEventCallback
+        public void onCallNotificationRemoved(java.lang.String str, android.os.UserHandle userHandle) throws android.os.RemoteException {
+        }
+
+        @Override // android.os.IInterface
+        public android.os.IBinder asBinder() {
+            return null;
+        }
+    }
+
+    public static abstract class Stub extends android.os.Binder implements android.app.ICallNotificationEventCallback {
+        static final int TRANSACTION_onCallNotificationPosted = 1;
+        static final int TRANSACTION_onCallNotificationRemoved = 2;
+
+        public Stub() {
+            attachInterface(this, android.app.ICallNotificationEventCallback.DESCRIPTOR);
+        }
+
+        public static android.app.ICallNotificationEventCallback asInterface(android.os.IBinder iBinder) {
+            if (iBinder == null) {
+                return null;
+            }
+            android.os.IInterface queryLocalInterface = iBinder.queryLocalInterface(android.app.ICallNotificationEventCallback.DESCRIPTOR);
+            if (queryLocalInterface != null && (queryLocalInterface instanceof android.app.ICallNotificationEventCallback)) {
+                return (android.app.ICallNotificationEventCallback) queryLocalInterface;
+            }
+            return new android.app.ICallNotificationEventCallback.Stub.Proxy(iBinder);
+        }
+
+        @Override // android.os.IInterface
+        public android.os.IBinder asBinder() {
+            return this;
+        }
+
+        public static java.lang.String getDefaultTransactionName(int i) {
+            switch (i) {
+                case 1:
+                    return "onCallNotificationPosted";
+                case 2:
+                    return "onCallNotificationRemoved";
+                default:
+                    return null;
+            }
+        }
+
+        @Override // android.os.Binder
+        public java.lang.String getTransactionName(int i) {
+            return getDefaultTransactionName(i);
+        }
+
+        @Override // android.os.Binder
+        public boolean onTransact(int i, android.os.Parcel parcel, android.os.Parcel parcel2, int i2) throws android.os.RemoteException {
+            if (i >= 1 && i <= 16777215) {
+                parcel.enforceInterface(android.app.ICallNotificationEventCallback.DESCRIPTOR);
+            }
+            if (i == 1598968902) {
+                parcel2.writeString(android.app.ICallNotificationEventCallback.DESCRIPTOR);
+                return true;
+            }
+            switch (i) {
+                case 1:
+                    java.lang.String readString = parcel.readString();
+                    android.os.UserHandle userHandle = (android.os.UserHandle) parcel.readTypedObject(android.os.UserHandle.CREATOR);
+                    parcel.enforceNoDataAvail();
+                    onCallNotificationPosted(readString, userHandle);
+                    return true;
+                case 2:
+                    java.lang.String readString2 = parcel.readString();
+                    android.os.UserHandle userHandle2 = (android.os.UserHandle) parcel.readTypedObject(android.os.UserHandle.CREATOR);
+                    parcel.enforceNoDataAvail();
+                    onCallNotificationRemoved(readString2, userHandle2);
+                    return true;
+                default:
+                    return super.onTransact(i, parcel, parcel2, i2);
+            }
+        }
+
+        private static class Proxy implements android.app.ICallNotificationEventCallback {
+            private android.os.IBinder mRemote;
+
+            Proxy(android.os.IBinder iBinder) {
+                this.mRemote = iBinder;
+            }
+
+            @Override // android.os.IInterface
+            public android.os.IBinder asBinder() {
+                return this.mRemote;
+            }
+
+            public java.lang.String getInterfaceDescriptor() {
+                return android.app.ICallNotificationEventCallback.DESCRIPTOR;
+            }
+
+            @Override // android.app.ICallNotificationEventCallback
+            public void onCallNotificationPosted(java.lang.String str, android.os.UserHandle userHandle) throws android.os.RemoteException {
+                android.os.Parcel obtain = android.os.Parcel.obtain(asBinder());
+                try {
+                    obtain.writeInterfaceToken(android.app.ICallNotificationEventCallback.DESCRIPTOR);
+                    obtain.writeString(str);
+                    obtain.writeTypedObject(userHandle, 0);
+                    this.mRemote.transact(1, obtain, null, 1);
+                } finally {
+                    obtain.recycle();
+                }
+            }
+
+            @Override // android.app.ICallNotificationEventCallback
+            public void onCallNotificationRemoved(java.lang.String str, android.os.UserHandle userHandle) throws android.os.RemoteException {
+                android.os.Parcel obtain = android.os.Parcel.obtain(asBinder());
+                try {
+                    obtain.writeInterfaceToken(android.app.ICallNotificationEventCallback.DESCRIPTOR);
+                    obtain.writeString(str);
+                    obtain.writeTypedObject(userHandle, 0);
+                    this.mRemote.transact(2, obtain, null, 1);
+                } finally {
+                    obtain.recycle();
+                }
+            }
+        }
+
+        @Override // android.os.Binder
+        public int getMaxTransactionId() {
+            return 1;
+        }
+    }
+}

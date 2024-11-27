@@ -1,0 +1,2 @@
+signature,file,startline,startcol,endline,endcol,properties
+Lcom/android/server/stats/FakeFeatureFlagsImpl;->addMobileBytesTransferByProcStatePuller()Z,out/soong/.intermediates/frameworks/base/services/core/java/com/android/server/stats/stats_flags_lib/android_common/e18b8e8d84cb9f664aa09a397b08c165/javac/srcjars/com/android/server/stats/FakeFeatureFlagsImpl.java,19,5,19,25,
